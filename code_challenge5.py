@@ -14,7 +14,7 @@ print("Welcome to Manga Hub :>")
 
 #3 = Horror
 
-print("Answer a few question before we proceed on type of manga's")
+print("Answer a few question before we proceed on type of manga's, Choose a number of your choice.")
 
 print("What type of genre: ")
 
