@@ -7,7 +7,7 @@ num = ""
 angloop = True
 
 while angloop == True:
-    num = eval(input("Put a number: "))
+    num = eval(input("input a number : "))
     if num % 2 == 1:
         print("Odd number")
         odd += num
