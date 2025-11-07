@@ -9,8 +9,16 @@ def summation(a):
         sum += b
     print(f'So The sum of {a} is {sum}')
 
+greeter("bogart")
+greeter("isidro")
+greeter("botong")
+greeter("isabel")
+
+
+
 summation(1)
 summation(2)
 summation(11)
 summation(12)
 summation(15)
+
