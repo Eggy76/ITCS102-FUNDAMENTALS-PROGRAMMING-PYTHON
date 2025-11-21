@@ -29,16 +29,14 @@ while True:
         os.system("cls")
         continue
     elif choice == "b":
-        code = input("Input the Student Code : ").lower()
-
         for a in student_records.keys():
-            if code in student_records.keys():
-                print("The Record is Found ^_^* ")
+            if a in student_records.keys():
+                print("The Records is Found ^_^* ")
         
-                print("Records")
+                print("Record List")
                 print("============================")
 
-                for b in student_records[code]:
+                for b in student_records[a]:
                     print(b)
 
     elif choice == "c":
@@ -48,7 +46,7 @@ while True:
             if code in student_records.keys():
                 print("The Record is Found ^_^* ")
         
-                print("Records")
+                print("\nRecords")
                 print("============================")
 
                 for c in student_records[code]:
