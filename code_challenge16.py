@@ -1,8 +1,8 @@
 
 import os
-
+import json
 os.system('cls')
-print("STUDENT INFORMSTION SYSTEM ")
+print("STUDENT INFORMATION SYSTEM ")
 print("===================================")
 
 student_records = {}
@@ -29,15 +29,14 @@ while True:
         os.system("cls")
         continue
     elif choice == "b":
-        for a in student_records.keys():
-            if a in student_records.keys():
+        os.system('cls')
+        for a,r in student_records.items():
                 print("The Records is Found ^_^* ")
         
                 print("Record List")
                 print("============================")
-
-                for b in student_records[a]:
-                    print(b)
+                print(f"STUDENTS ID {a}: STUDENT RECORD {r}") #it will now print all the items in dictionary
+        continue
 
     elif choice == "c":
         code = input("Input the Student Code : ").lower()
@@ -63,9 +62,48 @@ while True:
                     print(f"  {a}")
                 student_records.pop(search_id)
 
-    elif choice == "d":
-        print("Input a Student key to remove or delete : ")
-        pass
+    elif choice == "e":
+        print("Record Modification : ")
+        code = input("Enter Student Key : ")
+        for a in student_records[code]:
+            print(f": {a}")
+
+        first_name = input("Input Student First Name : ").upper()
+        last_name = input("Input Student Last Name : ").upper()
+        course = input("Input Student Course : ").upper()
+        email = input("Input Student Email : ").upper()
+        pogi = input("Input Student Pogi (Yes or No): ").upper()
+
+        student_records[code][0] = first_name
+        student_records[code][1] = last_name
+        student_records[code][2] = course
+        student_records[code][3] = email
+        student_records[code][4] = pogi
+
+        print("Data Updated! ")
+        continue
+
+    elif choice == "f":
+        os.system('cls')
+        with open("student_records.json","w") as new_file:  
+            json.dump(student_records,new_file, indent=4)
+            print("Data Exported")
+            continue
+    elif choice == "g":
+        os.system('cls')
+        with open("student_records.json","r") as new_file:
+            student_records = json.load(new_file)
+
+        student_records = student_records
+        print("Data Imported")
+
+        continue
+    elif choice == "p":
+        print("Exiting")
+        break
+   
     else:
         print("No Record Found. . . '^' ")
         continue
+
+
